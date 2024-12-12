@@ -1,0 +1,5 @@
+{
+    "apiBaseUrl": "https://default-url.example.com",
+    "imageBaseUrl": "https://default-images.example.com",
+    "environment": "DEV"
+  }

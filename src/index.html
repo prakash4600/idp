@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KeycloakAngularExample</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <script>
+    (function () {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', '/assets/runtime-config.json', false); // Adjust the path based on your app's configuration
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          window['runtimeConfig'] = JSON.parse(xhr.responseText);
+        } else {
+          console.error('Failed to load runtime-config.json:', xhr.statusText);
+        }
+      };
+      xhr.onerror = function () {
+        console.error('Error loading runtime-config.json');
+      };
+      xhr.send();
+    })();
+  </script> -->
+  <script>
+     fetch('assets/runtime-config.json')
+    .then(response => response.json())
+    .then(config => {
+      window.runtimeConfig = config;  // Assign the loaded JSON to window.runtimeConfig
+    })
+    .catch(error => console.error('Error loading runtime config:', error));
+  </script>
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+</body>
+</html>
